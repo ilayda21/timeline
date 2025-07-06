@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 import { TimelineFollowerPoint } from './TimelineFollowerPoint';
+import ChartScene from './ChartScene';
 
 const experiences = [
   { year: '2018', title: 'Frontend Intern' },
@@ -31,29 +32,36 @@ function TimelineLine({children}) {
 export default function Apps() {
 
   return (
-    <div
-      style={{
-        backgroundColor: "#F9FBFD",
-        paddingTop: "500px"
-      }}
-    > 
-      <TimelineLine>
-        <TimelineFollowerPoint/>
-        <div style={{
-          marginLeft: "100px",
-          paddingTop: "50px"
-        }}>
-          Somelskjdg
-        </div>
-      </TimelineLine>
-      <div 
+    <div>
+      <div style={{ width: "500px", height: "500px", marginTop: "100px" }}>
+        <ChartScene />
+      </div>
+      <div
+        style={{
+          backgroundColor: "#F9FBFD",
+          // paddingTop: "500px",
+        }}
+      >
+        <TimelineLine>
+          <TimelineFollowerPoint />
+          <div
+            style={{
+              marginLeft: "100px",
+              paddingTop: "50px",
+            }}
+          >
+            Somelskjdg
+          </div>
+        </TimelineLine>
+        {/* <div 
         style={{
           height: "100px"
         }}
-      ></div>
-      <TimelineLine>
-        <TimelineFollowerPoint/>
-      </TimelineLine>
+      ></div> */}
+        <TimelineLine>
+          <TimelineFollowerPoint />
+        </TimelineLine>
+      </div>
     </div>
   );
 }
